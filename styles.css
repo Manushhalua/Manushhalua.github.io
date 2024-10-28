@@ -1,0 +1,107 @@
+body {
+    background-color: #1c1c1c;
+    color: #fff;
+    font-size: 18px;
+    margin: 0;
+    font-family: 'Oxanium', sans-serif;
+}
+
+h1 {
+    text-align: center;
+    font-size: 2rem;
+}
+
+p {
+    text-align: center;
+    font-size: 1rem;
+    font-family: 'Oxanium', sans-serif;
+}
+
+.mypor {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 1.25rem;
+    font-family: Monospace;
+    background: linear-gradient(#61b3ff, #2950ff, #7429ff);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+}
+
+.mypor p {
+    margin: 0;
+}
+
+.skill {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    font-family: 'Oxanium', sans-serif;
+    background-color: #000;
+    width: 500px;
+    max-width: 90vw;
+    height: 250px; /* Adjusted height to make it rectangular */
+    position: relative;
+    border-radius: 10px;
+    color: #fff;
+    padding: 1em;
+    margin: 0 auto;
+}
+
+@property --angle {
+    syntax: "<angle>";
+    initial-value: 0deg;
+    inherits: false;
+}
+
+.skill::after, .skill::before {
+    content: '';
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    background-image: conic-gradient(from var(--angle), transparent 75%, #fff, #61b3ff, #2950ff, #7429ff, #fff);
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: -1;
+    border-radius: 10px;
+    animation: spin 3s linear infinite;
+    padding: 6px;
+}
+
+.skill::before {
+    filter: blur(1.5rem);
+    opacity: 0.7;
+}
+
+@keyframes spin {
+    from {
+        --angle: 0deg;
+    }
+    to {
+        --angle: 360deg;
+    }
+}
+
+@media (max-width: 768px) {
+    body {
+        font-size: 16px;
+    }
+
+    h1 {
+        font-size: 1.5rem;
+    }
+
+    p, .mypor {
+        font-size: 1rem;
+    }
+
+    .skill {
+        width: 90%;
+        height: 200px; /* Adjusted height for mobile view */
+    }
+}
