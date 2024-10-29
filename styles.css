@@ -1,5 +1,11 @@
 body {
-    background-color: #1c1c1c;
+
+    background-image: url('luxury-background-dark-modern-wave-gradient-design_343694-3090~2.avif');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-attachment: fixed;
+}
     color: #fff;
     font-size: 18px;
     margin: 0;
